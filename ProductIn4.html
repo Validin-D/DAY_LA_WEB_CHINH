@@ -139,6 +139,7 @@
         .insert([ //class insert này sẽ để nó chuyển thông tin vào table của mình
             {
             // -----------Phần data của người dùng---------------
+            registration_id: RegistID,
             user_name: userName, //user_name là key (tên của column trong table bên supabase )
             user_school:schoolName, 
             user_ZaloTel: phoneNumber,
@@ -146,7 +147,9 @@
             // ----------- Phần data của product-----------------
             product_Name: ProductName, 
             product_Price: ProductPrice , 
-            product_Detail: ProductDetail
+            product_Detail: ProductDetail,
+            user_CardPath: filePathCard,
+            product_ImagePath: filePathProduct
             }
          ])     
         .select() // hàm này giúp mình tự thêm ID cho phần đăng ký đó
