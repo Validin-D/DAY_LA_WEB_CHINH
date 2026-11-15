@@ -101,10 +101,10 @@
         const RegistID = crypto.randomUUID();
         //----Coin Card---
         const extCard = cardImg.name.split('.').pop();
-        const filePathCard = `${Date.now()}.${extCard}`; 
+        const filePathCard = `${RegistID}_Card.${extCard}`; 
         //----Pro😎---
         const extProduct = ProductImg.name.split('.').pop();
-        const filePathProduct = `${Date.now()}.${extProduct}`; 
+        const filePathProduct = `${RegistID}_Product.${extProduct}`; 
         
         
         //------------------ Phần lưu vào storage (Hình ảnh người dùng cung cấp)(sửa tí, cái này là riêng student card thôi----------------------
