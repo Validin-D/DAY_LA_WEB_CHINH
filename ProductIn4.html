@@ -87,6 +87,17 @@
         // Khai báo biến cho Sản phẩm data (dạng file)
         const cardImg= document.getElementById("ImageCard").files[0]; 
         const ProductImg= document.getElementById("ProductImage").files[0]; 
+        if (userName === "" || schoolName === "" || phoneNumber === "" ||
+            linkFacebook === "" || ProductName === "" || ProductDetail === "" ||
+            ProductPrice === "") {
+            alert("Vui lòng nhập đầy đủ thông tin");
+            return;
+        }
+        if (!cardImg || !ProductImg) {
+            alert("Vui lòng chọn đầy đủ hình ảnh");
+            return;
+        }
+            
         const ext = cardImg.name.split('.').pop();
         const filePath = `${Date.now()}.${ext}`; 
         
@@ -99,6 +110,10 @@
             upsert: false, 
             contentType: cardImg.type
         }); 
+        if (errorSTC) {
+            alert(JSON.stringify(errorSTC, null, 2));
+            return;
+        }
 
         
         // --------Phần Insert biến trên vào supabase table-----------------
