@@ -2,12 +2,12 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width= device-width, initial-scale= 1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 <body>
 <a href= "index.html">
-      <img id = "TrangChuIcon" src = "Home.png" height="50" width="50" alt= "Trang chủ"></img>
+      <img id = "TrangChuIcon" src = "Home.png" height="50" width="50" alt= "Trang chủ">
 </a>
     <h1 id = "MessageForUser"> Đăng ký sản phẩm</h1>
     <div class="Information">
@@ -59,12 +59,12 @@
             
         </div> <!-- Đóng div class của Information -->
 
-    <div id = "submitIn4"> <button type="button">Đăng ký sản phẩm</button></div>
+    <div > <button type="button" id = "submitIn4">Đăng ký sản phẩm</button></div>
 
 </body>
 
     <!--------------------------------- Phần script, tao làm luôn trên html cho nhanh------------------------->
-<!--khai ở head r nha Diệp nên k cần khai nữa> <!--thêm thư viện nha-->
+<!--khai ở head r nha Diệp nên k cần khai nữa--> <!--thêm thư viện nha-->
 <script type="module">
     const supabaseUrl = "https://rsndakviombsnwebuegy.supabase.co" // Url của supabase
     const supabaseAnonKey = "sb_publishable_jLDAR7Kpb6W65lgmvpVSMA_9shoqFxk" // Key của supabase
@@ -97,15 +97,20 @@
             alert("Vui lòng chọn đầy đủ hình ảnh");
             return;
         }
-            
-        const ext = cardImg.name.split('.').pop();
-        const filePath = `${Date.now()}.${ext}`; 
+
+        const RegistID = crypto.randomUUID();
+        //----Coin Card---
+        const extCard = cardImg.name.split('.').pop();
+        const filePathCard = `${Date.now()}.${extCard}`; 
+        //----Pro😎---
+        const extProduct = ProductImg.name.split('.').pop();
+        const filePathProduct = `${Date.now()}.${extProduct}`; 
         
         
         //------------------ Phần lưu vào storage (Hình ảnh người dùng cung cấp)(sửa tí, cái này là riêng student card thôi----------------------
         const {data:dataImgSTC,error: errorSTC} = await supabaseClient.storage
         .from ("student_Card")
-        .upload (filePath,cardImg,{
+        .upload (filePathCard,cardImg,{
             cacheControl: '3600', 
             upsert: false, 
             contentType: cardImg.type
@@ -117,7 +122,7 @@
         //----------Product Image nha------
         const {data:dataImgPro,error: errorImgPro} = await supabaseClient.storage
         .from ("product_Image")
-        .upload (filePath,ProductImg,{
+        .upload (filePathProduct,ProductImg,{
             cacheControl: '3600', 
             upsert: false, 
             contentType: ProductImg.type
