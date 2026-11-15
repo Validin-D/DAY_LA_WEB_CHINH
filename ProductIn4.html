@@ -102,7 +102,7 @@
         const filePath = `${Date.now()}.${ext}`; 
         
         
-        //------------------ Phần lưu vào storage (Hình ảnh người dùng cung cấp)----------------------
+        //------------------ Phần lưu vào storage (Hình ảnh người dùng cung cấp)(sửa tí, cái này là riêng student card thôi----------------------
         const {data:dataImgSTC,error: errorSTC} = await supabaseClient.storage
         .from ("student_Card")
         .upload (filePath,cardImg,{
@@ -112,6 +112,18 @@
         }); 
         if (errorSTC) {
             alert(JSON.stringify(errorSTC, null, 2));
+            return;
+        }
+        //----------Product Image nha------
+        const {data:dataImgPro,error: errorImgPro} = await supabaseClient.storage
+        .from ("product_Image")
+        .upload (filePath,ProductImg,{
+            cacheControl: '3600', 
+            upsert: false, 
+            contentType: ProductImg.type
+        }); 
+        if (errorImgPro) {
+            alert(JSON.stringify(errorImgPro, null, 2));
             return;
         }
 
