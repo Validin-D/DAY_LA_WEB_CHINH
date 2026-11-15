@@ -87,6 +87,17 @@
         // Khai báo biến cho Sản phẩm data (dạng file)
         const cardImg= document.getElementById("ImageCard").files[0]; 
         const ProductImg= document.getElementById("ProductImage").files[0]; 
+        if (!cardImg || !ProductImg) {
+            alert("Vui lòng chọn đầy đủ hình ảnh");
+            return;
+        }
+        if (userName === "" || schoolName === "" || phoneNumber === "" ||
+            linkFacebook === "" || ProductName === "" || ProductDetail === "" ||
+            ProductPrice === "") {
+            alert("Vui lòng nhập đầy đủ thông tin");
+            return;
+            }
+            
         const ext = cardImg.name.split('.').pop();
         const filePath = `${Date.now()}.${ext}`; 
         
