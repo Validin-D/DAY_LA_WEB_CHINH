@@ -1,1 +1,1 @@
-# DAY_LA_WEB_CHINH
+# thestudentshopmdc-gmail.com
