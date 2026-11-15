@@ -43,7 +43,8 @@ submitButton.addEventListener("click", async (e)=>{
   return;
  }
  else{
-  SignupMessage.textContent= "Đăng ký thành công, vui lòng đăng nhập nhé!"
+  SignupMessage.textContent= "Đăng ký thành công!"
+  window.location.href="index.html";
 }
 
 }); 
