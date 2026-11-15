@@ -111,7 +111,7 @@
             contentType: cardImg.type
         }); 
         if (errorSTC) {
-            alert("Upload ảnh thẻ không thành công: " + errorSTC.message);
+            alert(JSON.stringify(errorSTC, null, 2));
             return;
         }
 
