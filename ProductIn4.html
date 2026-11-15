@@ -99,6 +99,10 @@
             upsert: false, 
             contentType: cardImg.type
         }); 
+        if (errorSTC) {
+            alert("Upload ảnh thẻ không thành công: " + errorSTC.message);
+            return;
+        }
 
         
         // --------Phần Insert biến trên vào supabase table-----------------
