@@ -48,19 +48,18 @@ body{
 
 /* ------------Trang trí sản phẩm --------------*/
 .GreyBox{
-    position: fixed; 
-    top: 207px ; 
-    bottom: 0;            /* kéo dài hết chiều cao màn hình */
-    left: 50%;   
-    transform: translateX(-50%);           
-    background-color:#e8f0fe;
+    position: relative;
+    bottom: 178px; 
+    width: 70%;
     max-width: 1600px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding: 20px;
+    background-color: #e8f0fe;
     display: flex;
     justify-content: space-evenly;
-    gap: 50px; 
+    gap: 50px;
     flex-wrap: wrap;
-    align-items: center;
-    align-content: flex-start;
 
 }
 
