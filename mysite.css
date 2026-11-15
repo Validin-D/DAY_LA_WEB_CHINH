@@ -25,9 +25,10 @@ h1{
     bottom:  25px; 
 }
 #imageAC{
-    position: relative;
-    left: 30px;
-    bottom: 375px; 
+    margin-right: auto;
+    margin-bottom: 0;
+
+
 }
 
 #imageAC:hover {
@@ -38,6 +39,7 @@ h1{
         text-align: center;
 }
 body{
+    margin:0; 
     display:flex; 
     justify-items: center;
     flex-wrap: wrap;
@@ -47,7 +49,7 @@ body{
 /* ------------Trang trí sản phẩm --------------*/
 .GreyBox{
     position: fixed; 
-    top: 215px ; 
+    top: 207px ; 
     bottom: 0;            /* kéo dài hết chiều cao màn hình */
     left: 50%;   
     transform: translateX(-50%);           
