@@ -88,21 +88,34 @@ async function getUser() {
   }
  return data.user;
 }
-
+//-------UI------
 function updateUI(session) {
- if (!NameMessage || !EmailMessage) return;
  if (session) {
   const user = session.user;
-  NameMessage.textContent = user.user_metadata?.name || "chưa có tên";
-  EmailMessage.textContent = user.email || "chưa có email";
+  AuthStatus.textContent = "Trạng thái: đang đăng nhập";
+  NameMessage.textContent = user.user_metadata?.name || "Chưa có tên";
+  EmailMessage.textContent = user.email || "Chưa có email";
  }
  else {
+  AuthStatus.textContent = "Trạng thái: chưa đăng nhập";
   NameMessage.textContent = "Chưa có thông tin";
   EmailMessage.textContent = "Chưa có thông tin";
  }
 }
+//-----check----
+async function getSession() {
+ const { data, error } = await supabaseClient.auth.getSession();
+ if (error) {
+  AuthStatus.textContent ="Không thể kiểm tra trạng thái đăng nhập"
+  return;
+ }
+ updateUI(data.session);
+}
 
-async function Logout() {
+//----Phần đăng xuất
+const Logoutbutt = document.getElementById("Logoutbutt")
+
+Logoutbutt.addEventListener("click", async () => {
  LogoutMessage.textContent ="";
 
  const { data } = await supabaseClient.auth.getSession();
@@ -111,26 +124,18 @@ async function Logout() {
   return;
  }
  
- const {error} = await supabaseClient.auth.signOut();
+ const { error } = await supabaseClient.auth.signOut();
   if (error) {
    LogoutMessage.textContent="Đăng xuất thất bại: " + error.message;
    return;
   }
  LogoutMessage.textContent="Đăng xuất thành công";
-}
-
+})
+//-----theo dõi trạng thái
 supabaseClient.auth.onAuthStateChange((event, session) => {
  updateUI(session);
 });
 
-async function getSession() {
- const { data, error } = await supabaseClient.auth.getSession();
- if (error) {
-  console.log(error.message);
-  return;
- }
- updateUI(data.session);
-}
 
 getSession()
 
