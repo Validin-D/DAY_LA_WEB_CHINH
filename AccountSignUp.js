@@ -132,4 +132,5 @@ async function getSession() {
  updateUI(data.session);
 }
 
+getSession()
 
