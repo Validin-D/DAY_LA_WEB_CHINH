@@ -8,6 +8,7 @@ const AuthStatus = document.getElementById("AuthStatus")
 const NameMessage = document.getElementById("NameMessage")
 const EmailMessage = document.getElementById("EmailMessage")
 const LogoutMessage = document.getElementById("LogoutMessage")
+const TextmenuUserName = document.getElementById("TextmenuUserName")
 //-------UI------
 function updateUI(session) {
  if (session) {
