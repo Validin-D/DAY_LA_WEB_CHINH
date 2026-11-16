@@ -6,14 +6,14 @@
   <link rel="stylesheet" href="mysite.css">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script type="module" src="index.js"></script>
 </head>
 
 <body>
-  <a href= "AccountSignUp.html">
-  <p>Account sign up page</p>
-  </a>
+
+
         <div id = "background">
           <div id = "ThanhDiaChi">
             <img id ="imageMenu" src="IMG_0866.png" alt="Menu" height="45" width="45">
@@ -54,6 +54,24 @@
     <p id="AuthStatus">Đang kiểm tra trạng thái...</p> <br>
     <button type="button" id="Logoutbutt" color="red">ĐĂNG XUẤT</button> <br>
     <p id="LogoutMessage" style="color: red;" >bruh</p>
+      <a href= "AccountSignUp.html">
+  <p>Account sign up page</p>
+  </a>
+
+
+
+      <!--------------- PHẦN MENU BOX BỊ ẨN ------------------->
+    <div class ="menuBox hidden">
+      <div class = "menuBox1">
+          <h2 id = "menuText">Menu</h2>
+         <label> <img id = "menuClose" src="close.png" height="45" width="45"></label>
+      </div>
+      <div class = "menuBox2">
+         <h3 id="menuUserName"> Tên người dùng</h3>
+      </div>
+
+    </div>
+
 </body>
 
 

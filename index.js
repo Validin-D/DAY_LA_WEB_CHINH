@@ -56,3 +56,14 @@ supabaseClient.auth.onAuthStateChange((event, session) => {
  updateUI(session);
 });
 getSession()
+
+
+/*--------------Phần hiển thị thêm tính năng Menu -----------*/
+
+document.getElementById("imageMenu").addEventListener("click", function () {
+    document.querySelector(".menuBox").classList.remove("hidden");
+});
+
+document.getElementById("menuClose").addEventListener("click", function () {
+    document.querySelector(".menuBox").classList.add("hidden");
+});
