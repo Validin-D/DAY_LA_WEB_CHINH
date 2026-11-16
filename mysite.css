@@ -162,6 +162,11 @@ body{
     font-size: 125%; 
     color: red;
 }
-
+#imageMenu {
+    position: relative;
+}
+#imageMenu:hover {
+    transform: scale(0.8);
+}
 
 
