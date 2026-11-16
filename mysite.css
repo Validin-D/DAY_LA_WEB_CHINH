@@ -11,6 +11,12 @@
     position: relative; 
     bottom: 103px; 
 }
+#ThanhDiaChi{
+    display: flex; 
+    text-align: start;
+    gap: 2px; 
+    justify-items: flex-start;
+}
 h1{
     width:100% ;
     color: white; 
@@ -24,13 +30,15 @@ h1{
     position: relative ; 
     bottom:  25px; 
 }
+/* Phần hình ảnh thứ nhất*/
 #imageAC{
     position: relative;
 }
-
 #imageAC:hover {
     transform: scale(0.8);
 }
+/* Phần hình ảnh thứ hai*/
+
 #shadowload{
     color: red;
         text-align: center;
