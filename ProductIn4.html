@@ -10,58 +10,55 @@
 <a href= "index.html">
       <img id = "TrangChuIcon" src = "Home.png" height="50" width="50" alt= "Trang chủ">
 </a>
+<div class="SignupZ">
     <h1 id = "MessageForUser"> Đăng ký sản phẩm</h1>
-    <div class="Information">
-        <div class = "userInformation"> 
-                <div>
-         <h2> Thông tin người bán</h2>
-         <label> Họ và Tên: </label>
-         <input required type="text" name = "Tên" id ="username" maxlength="50" placeholder="Nhập họ và tên của bạn">
-         </div> <br>
-      <div>
-        <label>Trường: </label>
-        <input required type="text" name="Trường" id = "schoolName" placeholder="Nhập tên trường bạn đang học ">
-      </div> <br>
+   <div class="Information">
+  <div class="userInformation">
     <div>
-        <label>Số điện thoại(Zalo):</label>
-        <input required type="tel" name="Số điện thoại" id ="phoneNumber" placeholder="Nhập số điện thoại">
+      <h2>Thông tin người bán</h2>
+      <label>Họ và Tên: </label>
+      <input required type="text" name="Tên" id="username" maxlength="50" placeholder="Nhập họ và tên của bạn">
     </div> <br>
     <div>
-        <label>Link tài khoản Facebook: </label>
-        <input required type="url" name="facebook" id ="facebookAccount" placeholder="Điền link tài khoản facebook">
+      <label>Trường: </label>
+      <input required type="text" name="Trường" id="schoolName" placeholder="Nhập tên trường bạn đang học">
     </div> <br>
-        <label>Thẻ học sinh(bắt buộc): </label>
-        <input required type="file" name="imageCard" id ="ImageCard" accept="image/*">
+    <div>
+      <label>Số điện thoại(Zalo): </label>
+      <input required type="tel" name="Số điện thoại" id="phoneNumber" placeholder="Nhập số điện thoại">
     </div> <br>
-    
-        </div> <!-- -------------Đóng div class của UserInformation---------------->
+    <div>
+      <label>Link tài khoản Facebook: </label>
+      <input required type="url" name="facebook" id="facebookAccount" placeholder="Điền link tài khoản facebook">
+    </div> <br>
+    <div class="ProductImage">
+      <label>Thẻ học sinh(bắt buộc): </label>
+      <input required type="file" name="imageCard" id="ImageCard" accept="image/*">
+    </div>
+  </div> <!-- Đóng userInformation -->
 
-        <!-- Phần html của thông tin sản phẩm-->
-        <div class = "ProductIn4">
-                 <div>
-         <h2> Thông tin sản phẩm đăng ký</h2>
-         <label> Tên sản phẩm </label>
-         <input required type="text" name = "TênSp" id ="ProductName" maxlength="100" placeholder="Điền tên sản phẩm">
-         </div> <br>
-      <div>
-        <label>Mô tả sản phẩm: </label>
-        <input required type="text" name="Describe" id = "ProductDetail" placeholder="Nhập chi tiết thông tin sản phẩm">
-      </div> <br>
+  <div class="ProductIn4">
     <div>
-        <label>Giá bán:</label>
-        <input required type="number" name="PriceTag" id ="PriceTag" placeholder="Giá bán sản phẩm">
+      <h2>Thông tin sản phẩm đăng ký</h2>
+      <label>Tên sản phẩm: </label>
+      <input required type="text" name="TênSp" id="ProductName" maxlength="100" placeholder="Điền tên sản phẩm">
     </div> <br>
     <div>
-        <label>Hình ảnh sản phẩm: </label>
-        <input required type="file" name="imageProduct" id ="ProductImage" accept="image/*">
+      <label>Mô tả sản phẩm: </label>
+      <input required type="text" name="Describe" id="ProductDetail" placeholder="Nhập chi tiết thông tin sản phẩm">
     </div> <br>
-         
-        </div> <!-- Đóng div class của Thông tin sản phẩm-->
-            
-        </div> <!-- Đóng div class của Information -->
-
+    <div>
+      <label>Giá bán: </label>
+      <input required type="number" name="PriceTag" id="PriceTag" placeholder="Giá bán sản phẩm">
+    </div> <br>
+    <div class="ProductImage">
+      <label>Hình ảnh sản phẩm: </label>
+      <input required type="file" name="imageProduct" id="ProductImage" accept="image/*">
+    </div>
+  </div> <!-- Đóng ProductIn4 -->
+</div> <!-- Đóng Information -->
     <div > <button type="button" id = "submitIn4">Đăng ký sản phẩm</button></div>
-
+</div>
 </body>
 
     <!--------------------------------- Phần script, tao làm luôn trên html cho nhanh------------------------->
