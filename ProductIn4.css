@@ -1,7 +1,15 @@
 .userInformation {
+  display: inline-block;
   border: 1px solid black;
   border-radius: 10px;
   width: fit-content;
   padding: 0 5px;
 }
 
+.ProductIn4 {
+  display: inline-block;
+  border: 1px solid black;
+  border-radius: 10px;
+  width: fit-content;
+  padding: 0 5px;
+}
