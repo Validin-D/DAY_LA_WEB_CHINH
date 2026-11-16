@@ -1,11 +1,11 @@
 .ProductIn4, .userInformation {
-<!-- chỉnh vị trí div -->
+/* chỉnh vị trí div */
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
 
-<!-- căn chỉnh ô nội dung div -->
+/* căn chỉnh ô nội dung div */
   border: 1px solid black;
   border-radius: 10px;
   width: fit-content;
