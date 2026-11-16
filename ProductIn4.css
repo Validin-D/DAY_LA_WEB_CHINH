@@ -1,9 +1,27 @@
-.ProductIn4, .userInformation {
+.userInformation {
 /* chỉnh vị trí div */
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
+  flex-direction: column;
+
+/* căn chỉnh ô nội dung div */
+  border: 1px solid black;
+  border-radius: 10px;
+  width: fit-content;
+  padding: 0px 5px;
+  text-align: center;
+  min-height: 200px;
+}
+.ProductIn4 {
+/* chỉnh vị trí div */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-direction: column;
+
 
 /* căn chỉnh ô nội dung div */
   border: 1px solid black;
