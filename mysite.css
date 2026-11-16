@@ -13,9 +13,8 @@
 }
 #ThanhDiaChi{
     display: flex; 
-    text-align: start;
     gap: 2px; 
-    justify-items: flex-start;
+    justify-content: flex-start;
 }
 h1{
     width:100% ;
