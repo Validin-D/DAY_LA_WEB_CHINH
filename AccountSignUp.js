@@ -3,6 +3,7 @@ const LoginMessage = document.getElementById("LoginMessage")
 const LogoutMessage = document.getElementById("LogoutMessage")
 const NameMessage = document.getElementById("NameMessage")
 const EmailMessage = document.getElementById("EmailMessage")
+const AuthStatus = document.getElementById("AuthStatus")
 
 const supabaseUrl = "https://rsndakviombsnwebuegy.supabase.co"
 const supabaseAnonKey = "sb_publishable_jLDAR7Kpb6W65lgmvpVSMA_9shoqFxk"
