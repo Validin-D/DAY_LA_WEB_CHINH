@@ -4,6 +4,10 @@ const supabaseClient = window.supabase.createClient(
   supabaseUrl,
   supabaseAnonKey
 )
+const AuthStatus = document.getElementById("AuthStatus")
+const NameMessage = document.getElementById("NameMessage")
+const EmailMessage = document.getElementById("EmailMessage")
+const LogoutMessage = document.getElementById("LogoutMessage")
 //-------UI------
 function updateUI(session) {
  if (session) {
