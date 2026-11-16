@@ -42,3 +42,9 @@
   width: 220px;             
   font-size: 14px;
 }
+#TrangChuIcon {
+  position: relative;
+}
+#TrangChuIcon:hover {
+  transform: scale(0.8);
+}
