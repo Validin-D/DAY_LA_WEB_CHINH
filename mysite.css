@@ -7,7 +7,7 @@
 #background2{
     background-color: rgb(92, 184, 230); 
     width: 100% ; 
-    height: 103px;
+    height: 107px;
     position: relative; 
     bottom: 103px; 
 }
@@ -17,7 +17,7 @@ h1{
     font-family:"Press Start 2P"; 
     text-align: center;
     position: relative ;
-    bottom: 200px;  
+    bottom: 255px;  
  
 }
 .Searching{
