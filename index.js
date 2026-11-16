@@ -13,11 +13,13 @@ const TextmenuUserName = document.getElementById("TextmenuUserName")
 function updateUI(session) {
  if (session) {
   const user = session.user;
+  TextmenuUserName.textContent= user.user_metadata?.name || "Chưa có tên";
   AuthStatus.textContent = "Trạng thái: đang đăng nhập";
   NameMessage.textContent = user.user_metadata?.name || "Chưa có tên";
   EmailMessage.textContent = user.email || "Chưa có email";
  }
  else {
+  TextmenuUserName.textContent= user.user_metadata?.name"Chưa có tên";
   AuthStatus.textContent = "Trạng thái: chưa đăng nhập";
   NameMessage.textContent = "Chưa có thông tin";
   EmailMessage.textContent = "Chưa có thông tin";
