@@ -25,14 +25,14 @@ h1{
     bottom:  25px; 
 }
 #imageAC{
-    margin-right: auto;
-    margin-bottom: 0;
-
-
+    position: relative;
+    left: 50px;
+    bottom: 370px; 
+    
 }
 
 #imageAC:hover {
-    transform: scale(0.9);
+    transform: scale(0.8);
 }
 #shadowload{
     color: red;
