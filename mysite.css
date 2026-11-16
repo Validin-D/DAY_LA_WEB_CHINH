@@ -136,7 +136,7 @@ body{
     align-items: center;
     top: 50px; 
     background-color: rgb(255, 222, 89);
-
+    color: black; 
 }
 #signUpProduct{
     font-family: 'noto Sans';
