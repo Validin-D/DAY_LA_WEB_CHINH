@@ -55,8 +55,6 @@
   <p>Account sign up page</p>
   </a>
 
-
-
       <!--------------- PHẦN MENU BOX BỊ ẨN ------------------->
     <div class ="menuBox hidden">
       <div class = "menuBox1">
@@ -68,9 +66,8 @@
         <h3 id="TextmenuUserName"><img id ="imageAC1" src="accounticon.png" alt="Log in" height="20%" width="20%"> Tên người dùng</h3>
       </div>
       <div class = "textUnder">
-      <a href = "ProductIn4.html">
+      <
       <h3 id="signUpProduct"> Đăng ký sản phẩm</h3>
-      </a>
       </div>
       <div class = "textUnder1">
       <h3 id="textLogOut">ĐĂNG XUẤT</h3>
@@ -80,7 +77,12 @@
 
 
     </div>
-
+<script>
+  const SignUpPageText = document.getElementById("signUpProduct");
+  SignUpPageText.addEventListener("click", () => {
+    window.location.href = "ProductIn4.html";
+  });
+</script>
 </body>
 
 
