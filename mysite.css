@@ -111,18 +111,17 @@ body{
     height: 103px; 
     background-color: rgb(92, 184, 230) ;
     align-items: center; 
-    justify-content: flex-start;
 }
-#menuUserName{
+#TextmenuUserName{
     font-family:'noto Sans';
+    font-size: clamp(1rem, 2vw, 2rem); 
+    white-space: nowrap;
+    margin: 0 auto; 
     color: white; 
-    margin: 0 auto; 
 }
-#menuUserName{
-    font-family:'noto Sans';
-    font-style:normal;
-    font-size: 150%; 
-    margin: 0 auto; 
+#imageAC1{
+    position: relative;
+    top: 15px; 
 }
 /* ----------------Phần còn lại của Menu (Phần màu trắng)-------------- */
 .textUnder{
@@ -137,7 +136,7 @@ body{
 }
 #signUpProduct{
     font-family: 'noto Sans';
-    font-size: clamp(1rem, 2vw, 2rem);
+    font-size: clamp(1rem, 1.5vw, 2rem);
     white-space: nowrap;
     position: absolute;
     left: 50%;
