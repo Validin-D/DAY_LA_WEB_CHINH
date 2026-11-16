@@ -59,11 +59,11 @@ getSession()
 
 
 /*--------------Phần hiển thị thêm tính năng Menu -----------*/
-
+    /* Nút mở menu */
 document.getElementById("imageMenu").addEventListener("click", function () {
     document.querySelector(".menuBox").classList.remove("hidden");
 });
-
+    /* Nút đóng menu */
 document.getElementById("menuClose").addEventListener("click", function () {
     document.querySelector(".menuBox").classList.add("hidden");
 });
