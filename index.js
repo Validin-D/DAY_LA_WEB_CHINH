@@ -33,9 +33,9 @@ async function getSession() {
 }
 
 //----Phần đăng xuất
-const textLogOut = document.getElementById("textLogOut")
+const textLogOut = document.getElementById("textLogOut");
 
-Logoutbutt.addEventListener("click", async () => {
+textLogOut.addEventListener("click", async () => {
  LogoutMessage.textContent ="";
 
  const { data } = await supabaseClient.auth.getSession();
