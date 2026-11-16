@@ -51,3 +51,4 @@ Logoutbutt.addEventListener("click", async () => {
 supabaseClient.auth.onAuthStateChange((event, session) => {
  updateUI(session);
 });
+getSession()
