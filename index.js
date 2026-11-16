@@ -4,7 +4,20 @@ const supabaseClient = window.supabase.createClient(
   supabaseUrl,
   supabaseAnonKey
 )
-
+//-------UI------
+function updateUI(session) {
+ if (session) {
+  const user = session.user;
+  AuthStatus.textContent = "Trạng thái: đang đăng nhập";
+  NameMessage.textContent = user.user_metadata?.name || "Chưa có tên";
+  EmailMessage.textContent = user.email || "Chưa có email";
+ }
+ else {
+  AuthStatus.textContent = "Trạng thái: chưa đăng nhập";
+  NameMessage.textContent = "Chưa có thông tin";
+  EmailMessage.textContent = "Chưa có thông tin";
+ }
+}
 //-----check----
 async function getSession() {
  const { data, error } = await supabaseClient.auth.getSession();
