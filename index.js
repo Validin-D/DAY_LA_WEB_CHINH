@@ -1,26 +1,33 @@
+
 const supabaseUrl = "https://rsndakviombsnwebuegy.supabase.co"
 const supabaseAnonKey = "sb_publishable_jLDAR7Kpb6W65lgmvpVSMA_9shoqFxk"
 const supabaseClient = window.supabase.createClient(
   supabaseUrl,
   supabaseAnonKey
 )
+const AuthStatus = document.getElementById("AuthStatus")
+const NameMessage = document.getElementById("NameMessage")
+const EmailMessage = document.getElementById("EmailMessage")
 const LogoutMessage = document.getElementById("LogoutMessage")
-const MenuUserName = document.getElementById("MenuUserName")
 //-------UI------
 function updateUI(session) {
  if (session) {
   const user = session.user;
-  MenuUserName.textContent= user.user_metadata?.name || "Chưa có tên";
+  AuthStatus.textContent = "Trạng thái: đang đăng nhập";
+  NameMessage.textContent = user.user_metadata?.name || "Chưa có tên";
+  EmailMessage.textContent = user.email || "Chưa có email";
  }
  else {
-  MenuUserName.textContent= "Chưa có tên";
+  AuthStatus.textContent = "Trạng thái: chưa đăng nhập";
+  NameMessage.textContent = "Chưa có thông tin";
+  EmailMessage.textContent = "Chưa có thông tin";
  }
 }
 //-----check----
 async function getSession() {
  const { data, error } = await supabaseClient.auth.getSession();
  if (error) {
-  MenuUserName.textContent ="Không thể kiểm tra"
+  AuthStatus.textContent ="Không thể kiểm tra trạng thái đăng nhập"
   return;
  }
  updateUI(data.session);
@@ -50,7 +57,6 @@ supabaseClient.auth.onAuthStateChange((event, session) => {
  updateUI(session);
 });
 getSession()
-
 
 /*--------------Phần hiển thị thêm tính năng Menu -----------*/
     /* Nút mở menu */
