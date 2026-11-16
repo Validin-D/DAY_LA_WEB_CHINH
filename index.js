@@ -33,7 +33,7 @@ async function getSession() {
 }
 
 //----Phần đăng xuất
-const Logoutbutt = document.getElementById("Logoutbutt")
+const textLogOut = document.getElementById("textLogOut")
 
 Logoutbutt.addEventListener("click", async () => {
  LogoutMessage.textContent ="";
