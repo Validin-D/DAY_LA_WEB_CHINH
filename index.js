@@ -4,32 +4,23 @@ const supabaseClient = window.supabase.createClient(
   supabaseUrl,
   supabaseAnonKey
 )
-const AuthStatus = document.getElementById("AuthStatus")
-const NameMessage = document.getElementById("NameMessage")
-const EmailMessage = document.getElementById("EmailMessage")
 const LogoutMessage = document.getElementById("LogoutMessage")
-const TextmenuUserName = document.getElementById("TextmenuUserName")
+const MenuUserName = document.getElementById("MenuUserName")
 //-------UI------
 function updateUI(session) {
  if (session) {
   const user = session.user;
-  TextmenuUserName.textContent= user.user_metadata?.name || "Chưa có tên";
-  AuthStatus.textContent = "Trạng thái: đang đăng nhập";
-  NameMessage.textContent = user.user_metadata?.name || "Chưa có tên";
-  EmailMessage.textContent = user.email || "Chưa có email";
+  MenuUserName.textContent= user.user_metadata?.name || "Chưa có tên";
  }
  else {
-  TextmenuUserName.textContent= user.user_metadata?.name"Chưa có tên";
-  AuthStatus.textContent = "Trạng thái: chưa đăng nhập";
-  NameMessage.textContent = "Chưa có thông tin";
-  EmailMessage.textContent = "Chưa có thông tin";
+  MenuUserName.textContent= "Chưa có tên";
  }
 }
 //-----check----
 async function getSession() {
  const { data, error } = await supabaseClient.auth.getSession();
  if (error) {
-  AuthStatus.textContent ="Không thể kiểm tra trạng thái đăng nhập"
+  MenuUserName.textContent ="Không thể kiểm tra"
   return;
  }
  updateUI(data.session);
