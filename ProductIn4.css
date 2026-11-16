@@ -1,4 +1,13 @@
-.ProductIn4, .userInformation {
+.userInformation {
+  flex: 1;
+  border: 1px solid black;
+  border-radius: 10px;
+  text-align: center;
+  padding: 15px;
+  box-sizing: border-box;
+  min-width: 400px;
+}
+.ProductIn4 {
   flex: 1;
   border: 1px solid black;
   border-radius: 10px;
