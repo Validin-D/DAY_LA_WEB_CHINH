@@ -1,9 +1,49 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thông tin tài khoản</title>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   </head>
   <body>
-    
+    <h1>Thông tin tài khoản</h1>
+    <p id="AccountID">Không có đữ liệu</p>
+    <p id="AccountUsername">Không có đữ liệu</p>
+    <p id="AccountEmail">Không có đữ liệu</p>
+    <p id="AccountCreatedAt">Không có đữ liệu</p>
+
+
+    <script>
+      const supabaseUrl = ""
+      const supabaseKey = ""
+
+      const supabaseClient = window.supabase.createClient(
+        supabaseUrl,
+        supabaseKey
+      )
+
+      const AccountID = document.getElementById("AccountID")
+      const AccountUsername = document.getElementById("AccountUsername")
+      const AccountEmail = document.getElementById("AccountEmail")
+      const AccountCreatedAt = document.getElementById("AccountCreatedAt")
+
+      async function GetAccountIn4() {
+        const { data: { user }, error } = await supabaseClient.auth.GetUser()
+        if (error || !user) {
+          AccountID.textContent = "Không có dữ liệu"
+          AccountUsername.textContent = "Không có dữ liệu"
+          AccountEmail.textContent = "Không có dữ liệu"
+          AccountCreatedAt.textContent = "Không có dữ liệu"
+          return
+        }
+        AccountID.textContent = "ID tài khoản: " + user.id
+        AccountUsername.textContent = "Tên tài khoản: " + user.user_metadata.username
+        AccountEmail.textContent = "Email của tài khoản: " + user.email
+        AccountCreatedAt.textContent = "Thời gian đăng ký tài khoản: " + new Date(user.created_at).toLocaleString("vi-VN")
+        
+      }
+      getAccountIn4()
+    </script>
   </body>
 </html>
