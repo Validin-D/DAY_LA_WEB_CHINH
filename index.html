@@ -78,8 +78,9 @@ const supabaseClient = window.supabase.createClient(
     </div>
   <p id="AccountIn4Page">Thông tin tài khoản</p>
 <script>
-  //---đổi tên TextmenuUserName-----
+  //---đổi tên MenuUserName-----
   async function MenuUserName() {
+    const MenuUserName = document.getElementById("MenuUserName")
     const { data: { user }, error } = await supabaseClient.auth.getUser()
     if (user) {
       MenuUserName.textContent = user.user_metadata.name
