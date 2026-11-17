@@ -41,16 +41,16 @@ textLogOut.addEventListener("click", async () => {
 
  const { data } = await supabaseClient.auth.getSession();
  if (!data.session) {
-  LogoutMessage.textContent = "Bạn hiện chưa đăng nhập";
+  alert("Bạn hiện chưa đăng nhập");
   return;
  }
  
  const { error } = await supabaseClient.auth.signOut();
   if (error) {
-   LogoutMessage.textContent="Đăng xuất thất bại: " + error.message;
+   alert("Đăng xuất thất bại: " + error.message);
    return;
   }
- LogoutMessage.textContent="Đăng xuất thành công";
+ alert("Đăng xuất thành công");
 })
 //-----theo dõi trạng thái
 supabaseClient.auth.onAuthStateChange((event, session) => {
