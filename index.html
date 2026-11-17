@@ -64,7 +64,7 @@ const supabaseClient = window.supabase.createClient(
       </div>
       <hr id = "hrMainpage">
       <div class = "menuBox2">
-        <h3 id="TextmenuUserName"><img id ="imageAC1" src="accounticon.png" alt="Log in" height="20%" width="20%"> Chưa có tên</h3>
+        <h3 id="TextmenuUserName"><img id ="imageAC1" src="accounticon.png" alt="Log in" height="20%" width="20%"><span id="MenuUserName">Chưa có tên</span></h3>
       </div>
       <a href = "ProductIn4.html">
       <div class = "textUnder">
@@ -79,10 +79,10 @@ const supabaseClient = window.supabase.createClient(
   <p id="AccountIn4Page">Thông tin tài khoản</p>
 <script>
   //---đổi tên TextmenuUserName-----
-  async function Name() {
+  async function MenuUserName() {
     const { data: { user }, error } = await supabaseClient.auth.getUser()
     if (user) {
-      TextmenuUserName.textContent = user.user_metadata.name
+      MenuUserName.textContent = user.user_metadata.name
     }
   }
   const SignUpPageText = document.getElementById("signUpProduct");
@@ -93,7 +93,10 @@ const supabaseClient = window.supabase.createClient(
   AccountIn4Page.addEventListener("click", () => {
     window.location.href = "AccountIn4.html";
   });
-  Name()
+  MenuUserName()
+  supabaseClient.auth.onAuthStateChange(() => {
+  MenuUserName()
+})
 </script>
 </body>
   
