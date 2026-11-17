@@ -8,10 +8,10 @@
   </head>
   <body>
     <h1>Thông tin tài khoản</h1>
-    <p id="AccountID">Không có đữ liệu</p>
-    <p id="AccountUsername">Không có đữ liệu</p>
-    <p id="AccountEmail">Không có đữ liệu</p>
-    <p id="AccountCreatedAt">Không có đữ liệu</p>
+    <p id="AccountID">ID tài khoản: không có đữ liệu</p>
+    <p id="AccountUsername">Tên tài khoản: không có đữ liệu</p>
+    <p id="AccountEmail">Email tài khoản: không có đữ liệu</p>
+    <p id="AccountCreatedAt">Thời gian đăng ký tài khoản: không có đữ liệu</p>
 
 
     <script>
@@ -31,15 +31,15 @@
       async function GetAccountIn4() {
         const { data: { user }, error } = await supabaseClient.auth.getUser()
         if (error || !user) {
-          AccountID.textContent = "Không có dữ liệu"
-          AccountUsername.textContent = "Không có dữ liệu"
-          AccountEmail.textContent = "Không có dữ liệu"
-          AccountCreatedAt.textContent = "Không có dữ liệu"
+          AccountID.textContent = "ID tài khoản: không có dữ liệu"
+          AccountUsername.textContent = "Tên tài khoản: không có dữ liệu"
+          AccountEmail.textContent = "Email tài khoản: không có dữ liệu"
+          AccountCreatedAt.textContent = "Thời gian đăng ký tài khoản: không có dữ liệu"
           return
         }
         AccountID.textContent = "ID tài khoản: " + user.id
         AccountUsername.textContent = "Tên tài khoản: " + user.user_metadata.name
-        AccountEmail.textContent = "Email của tài khoản: " + user.email
+        AccountEmail.textContent = "Email tài khoản: " + user.email
         AccountCreatedAt.textContent = "Thời gian đăng ký tài khoản: " + new Date(user.created_at).toLocaleString("vi-VN")
         
       }
