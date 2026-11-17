@@ -29,7 +29,7 @@
       const AccountCreatedAt = document.getElementById("AccountCreatedAt")
 
       async function GetAccountIn4() {
-        const { data: { user }, error } = await supabaseClient.auth.GetUser()
+        const { data: { user }, error } = await supabaseClient.auth.getUser()
         if (error || !user) {
           AccountID.textContent = "Không có dữ liệu"
           AccountUsername.textContent = "Không có dữ liệu"
@@ -43,7 +43,7 @@
         AccountCreatedAt.textContent = "Thời gian đăng ký tài khoản: " + new Date(user.created_at).toLocaleString("vi-VN")
         
       }
-      getAccountIn4()
+      GetAccountIn4()
     </script>
   </body>
 </html>
