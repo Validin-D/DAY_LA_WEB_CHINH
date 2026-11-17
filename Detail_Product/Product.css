@@ -50,7 +50,7 @@ body{
 }
 .MainDetail{
        background-color: white;
-    height: 60vh;
+    height: 40vh;
     width: 45%; 
     margin-right: 2,5%;
     border-radius: 10px;
@@ -85,4 +85,28 @@ hr{
     height: 550px;
     background-color: orange;
 
+}
+.MainDetail p{
+    font-family: 'noto Sans';
+    text-align: center;
+}
+
+.In4User{
+    text-align: end;
+    margin-bottom: 0;
+    position: sticky;
+    right: 0 ; 
+    bottom: 0 ; 
+    background-color:rgb(200, 209, 217);
+    height: 25vh;
+    width: 20%; 
+    margin-right: 2,5%;
+    border-radius: 10px;
+    max-width: 100%;
+    container-type: inline-size;
+}
+#FacebookIcon{
+    margin: 0 ; 
+    position: relative;
+    bottom: 10%; 
 }
