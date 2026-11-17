@@ -38,7 +38,7 @@
           return
         }
         AccountID.textContent = "ID tài khoản: " + user.id
-        AccountUsername.textContent = "Tên tài khoản: " + user.user_metadata.username
+        AccountUsername.textContent = "Tên tài khoản: " + user.user_metadata.name
         AccountEmail.textContent = "Email của tài khoản: " + user.email
         AccountCreatedAt.textContent = "Thời gian đăng ký tài khoản: " + new Date(user.created_at).toLocaleString("vi-VN")
         
