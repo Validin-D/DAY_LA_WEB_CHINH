@@ -98,7 +98,15 @@ const supabaseClient = window.supabase.createClient(
   })
   //---Cập nhật lần đầu khi mở trang---
   UpdateMenuUserName()
-
+//----link---//
+  const SignUpPageText = document.getElementById("signUpProduct");
+  SignUpPageText.addEventListener("click", () => {
+    window.location.href = "ProductIn4.html";
+  });
+  const AccountIn4Page = document.getElementById("AccountIn4Page");
+  AccountIn4Page.addEventListener("click", () => {
+    window.location.href = "AccountIn4.html";
+  });
 </script>
 </body>
   
