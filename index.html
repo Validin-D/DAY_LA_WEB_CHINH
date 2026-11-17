@@ -98,7 +98,7 @@ const supabaseClient = window.supabase.createClient(
   UpdateMenuUserName()
 //----link---//
   const SignUpPageText = document.getElementById("signUpProduct");
-  SignUpPageText.addEventListener("click", () => {
+  SignUpPageText.addEventListener("click",async () => {
     const { data: { session }, error} = await supabaseClient.auth.getSession()
     if (error || !session) {
       alert("Vui lòng đăng nhập để thực hiện đăng ký sản phẩm")
