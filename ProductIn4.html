@@ -81,6 +81,13 @@
         const ProductName= document.getElementById("ProductName").value 
         const ProductDetail = document.getElementById("ProductDetail").value 
         const ProductPrice = document.getElementById("PriceTag").value 
+
+        const { data: { user }, error: userError} = supabaseClient.auth.getUser()
+        if (userError || !user) {
+            alert("Vui lòng đăng nhập để đăng ký sản phẩm");
+            return;
+        }
+        const UserID = user.id;
         
         // Khai báo biến cho Sản phẩm data (dạng file)
         const cardImg= document.getElementById("ImageCard").files[0]; 
