@@ -8,7 +8,6 @@ const supabaseClient = window.supabase.createClient(
 const AuthStatus = document.getElementById("AuthStatus")
 const NameMessage = document.getElementById("NameMessage")
 const EmailMessage = document.getElementById("EmailMessage")
-const LogoutMessage = document.getElementById("LogoutMessage")
 //-------UI------
 function updateUI(session) {
  if (session) {
@@ -37,7 +36,6 @@ async function getSession() {
 const textLogOut = document.getElementById("textLogOut");
 
 textLogOut.addEventListener("click", async () => {
- LogoutMessage.textContent ="";
 
  const { data } = await supabaseClient.auth.getSession();
  if (!data.session) {
