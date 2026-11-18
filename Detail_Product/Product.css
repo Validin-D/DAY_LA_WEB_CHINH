@@ -1,111 +1,108 @@
-body{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    background-color: rgb(216, 216, 216);
-}
-.ThanhTrenCung{
-    height: 7%;
-    width: 100%;
-    background-color: rgb(92, 225, 230);
-    display: flex;
-    position: absolute;
-    top: 0  ;
-}
-#nameWeb{
-    font-family: 'Press Start 2P';
-    font-size: clamp(10px, 2.5vw, 20px);
-    white-space: nowrap;
-}
-.DisplayProduct{
-    display: flex;
-    position: absolute;
-    top: 7% ; 
-    padding: 1% 5%; 
-}
-.textDetail{
-    position: absolute;
-    top: 7% ; 
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    width: 100%;
-}
-.NameandPrice{
-    background-color: white;
-    height: 23vh;
-    width: 50%; 
-    border-radius: 10px;
-    max-width: 50%;
-    container-type: inline-size;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;   /* chữ nằm sát phía trên box */
-    padding:  0 3%;                /* khoảng cách từ mép box tới chữ */
-    box-sizing: border-box;
-
-}
-.MainDetail{
-       background-color: white;
-    height: 40vh;
-    width: 45%; 
-    margin-right: 2,5%;
-    border-radius: 10px;
-    max-width: 100%;
-    container-type: inline-size;
-}
-hr{
-    margin: 0;
-    height: 2px;
-    width: 100%;
-  border: none;
-  border-top: 2px solid black;
-  z-index: -1;
-}
-.NameandPrice h2{
-        margin: 0;
-    font-family: 'Alfa Slab One';
-    font-size: clamp(14px, 8cqw, 45px);
-}
-.NameandPrice h1{
-        margin: 0;
-    font-family: 'Alfa Slab One';
-         font-size: clamp(18px, 15cqw, 60px);  
-       color: orange;
-       font-style: italic;
-}
-#boxTrong{
-    position: absolute;
-    top: 7% ; 
-    border-radius: 10px;
-    width: 550px;
-    height: 550px;
-    background-color: orange;
-
-}
-.MainDetail p{
-    font-family: 'noto Sans';
-    text-align: center;
+body {
+  margin: 0;
+  min-width: 1200px;              /* nhỏ hơn thì cuộn ngang, không vỡ */
+  background-color: rgb(216, 216, 216);
 }
 
-.In4User{
-    text-align: end;
-    margin-bottom: 0;
-    position: sticky;
-    right: 0 ; 
-    bottom: 0 ; 
-    background-color:rgb(200, 209, 217);
-    height: 25vh;
-    width: 20%; 
-    margin-right: 2,5%;
-    border-radius: 10px;
-    max-width: 100%;
-    container-type: inline-size;
+.ThanhTrenCung {
+  height: 60px;
+  background-color: rgb(92, 225, 230);
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
 }
-#FacebookIcon{
-    margin: 0 ; 
-    position: relative;
-    bottom: 10%; 
+#nameWeb {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 20px;
+  white-space: nowrap;
+}
+
+/* Khung cố định, canh giữa */
+.page {
+  width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+/* Ô  chứa ảnh */
+#boxTrong {
+  flex: none;
+  width: 500px;
+  height: 500px;
+  background-color: orange;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#boxTrong img {
+  width: 90%;
+  height: 90%;
+  object-fit: contain;
+}
+
+/* Cột bên phải */
+.textDetail {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.NameandPrice,
+.MainDetail,
+.In4User {
+  background-color: white;
+  border-radius: 10px;
+  padding: 3%;
+  box-sizing: border-box;
+  container-type: inline-size;
+}
+.NameandPrice
+ { min-height: 75px; border-bottom: 2px solid black; }
+.MainDetail
+   { min-height: 250px; }
+.In4User
+      { background-color: rgb(200, 209, 217); text-align: end; align-self: flex-end; width: 50%; }
+
+.NameandPrice h2 
+{ margin: 0; font-family: 'Alfa Slab One'; font-size: clamp(14px, 8cqw, 45px); }
+.NameandPrice h1
+ { margin: 0; font-family: 'Alfa Slab One'; font-size: clamp(18px, 15cqw, 60px); color: orange; font-style: italic; }
+.MainDetail p
+    { font-family: 'Noto Sans', sans-serif; text-align: center; }
+
+
+
+@media (max-width: 768px) {
+  body {
+    min-width: 0;            /* bỏ khung 1200px */
+  }
+
+  .page {
+    width: 100%;
+    flex-direction: column;  /* xếp dọc: ảnh trên, thông tin dưới */
+  }
+
+  #boxTrong {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;   
+  }
+
+  .textDetail {
+    width: 100%;
+  }
+
+  .In4User {
+    width: 100%;          
+  }
+
+  #nameWeb {
+    font-size: 12px;
+  }
 }

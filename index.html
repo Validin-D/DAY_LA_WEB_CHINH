@@ -57,6 +57,8 @@ const supabaseClient = window.supabase.createClient(
     <p id="LogoutMessage" style="color: red;" >bruh</p>
 
       <!--------------- PHẦN MENU BOX BỊ ẨN ------------------->
+    <div class = "PhanBiDen hidden">
+    </div>
     <div class ="menuBox hidden">
       <div class = "menuBox1">
           <h2 id = "menuText">Menu</h2>
@@ -71,14 +73,16 @@ const supabaseClient = window.supabase.createClient(
       <h3 id="signUpProduct"> Đăng ký sản phẩm</h3>
       </div>
       </a>
-       <div class = "textUnderIn4">
-      <h3 id="signUpProduct"> Thông tin người dùng</h3>
+      <a href="AccountIn4.html">
+        <div class = "textUnderIn4">
+      <h3 id="signUpProduct"> Thông tin tài khoản</h3>
       </div>
+      </a>
+
       <div class = "textUnder1">
       <h3 id="textLogOut">ĐĂNG XUẤT</h3>
       </div>
     </div>
-  <p id="AccountIn4Page">Thông tin tài khoản</p>
 <script>
   
   //---Đổi MenuUserName---
@@ -109,10 +113,6 @@ const supabaseClient = window.supabase.createClient(
       return
     }
     window.location.href = "ProductIn4.html";
-  });
-  const AccountIn4Page = document.getElementById("AccountIn4Page");
-  AccountIn4Page.addEventListener("click", () => {
-    window.location.href = "AccountIn4.html";
   });
 </script>
 </body>

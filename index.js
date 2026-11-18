@@ -62,8 +62,10 @@ getSession()
     /* Nút mở menu */
 document.getElementById("imageMenu").addEventListener("click", function () {
     document.querySelector(".menuBox").classList.remove("hidden");
+    document.querySelector(".PhanBiDen").classList.remove("hidden");
 });
     /* Nút đóng menu */
 document.getElementById("menuClose").addEventListener("click", function () {
     document.querySelector(".menuBox").classList.add("hidden");
+    document.querySelector(".PhanBiDen").classList.add("hidden");
 });
