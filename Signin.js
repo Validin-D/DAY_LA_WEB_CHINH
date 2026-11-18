@@ -12,11 +12,10 @@ const supabaseAnonKey = "sb_publishable_jLDAR7Kpb6W65lgmvpVSMA_9shoqFxk"
 const Loginbutt = document.getElementById("Loginbutt")
 Loginbutt.addEventListener("click", async (e)=>{
   e.preventDefault();
-  LoginMessage.textContent="";
 
  const { data: currentData } = await supabaseClient.auth.getSession();
  if (currentData.session) {
-  LoginMessage.textContent = "Tài khoản được đăng nhập thành công";
+  alert("Tài khoản được đăng nhập thành công")
   return;
  }
  
@@ -24,7 +23,7 @@ Loginbutt.addEventListener("click", async (e)=>{
  const LoginPassword = document.getElementById("LoginPassword").value;
 
  if (LoginEmail === "" || LoginPassword === "") {
-  LoginMessage.textContent="Vui lòng nhập đầy đủ thông tin";
+  alert("Vui lòng nhập đầy đủ thông tin")
   return;
  }
  
@@ -33,10 +32,10 @@ Loginbutt.addEventListener("click", async (e)=>{
   password : LoginPassword
  });
  if (error) {
-  LoginMessage.textContent="Đăng nhập thất bại: " + error.message;
+  alert("Đăng nhập thất bại: " + error.message)
   return;
  }
- LoginMessage.textContent="Đăng nhập thành công!";
+ alert("Đăng nhập thành công!")
  window.location.href="index.html";
  
 }); 
