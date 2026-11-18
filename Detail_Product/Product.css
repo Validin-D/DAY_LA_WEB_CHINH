@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  min-width: 1200px;              /* nhỏ hơn thì cuộn ngang, không vỡ */
+  min-width: 1200px;           
   background-color: rgb(216, 216, 216);
 }
 
@@ -80,12 +80,12 @@ body {
 
 @media (max-width: 768px) {
   body {
-    min-width: 0;            /* bỏ khung 1200px */
+    min-width: 0;           
   }
 
   .page {
     width: 100%;
-    flex-direction: column;  /* xếp dọc: ảnh trên, thông tin dưới */
+    flex-direction: column;
   }
 
   #boxTrong {
