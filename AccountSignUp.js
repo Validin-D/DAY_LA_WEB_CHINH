@@ -46,40 +46,7 @@ submitButton.addEventListener("click", async (e)=>{
 }
 
 }); 
-// Phần đăng nhập
-const Loginbutt = document.getElementById("Loginbutt")
-Loginbutt.addEventListener("click", async (e)=>{
-  e.preventDefault();
-  LoginMessage.textContent="";
 
- const { data: currentData } = await supabaseClient.auth.getSession();
- if (currentData.session) {
-  LoginMessage.textContent = "Tài khoản được đăng nhập thành công";
-  return;
- }
- 
- const LoginEmail = document.getElementById("LoginEmail").value.trim();
- const LoginPassword = document.getElementById("LoginPassword").value;
-
- if (LoginEmail === "" || LoginPassword === "") {
-  LoginMessage.textContent="Vui lòng nhập đầy đủ thông tin";
-  return;
- }
- 
- const { data, error } = await supabaseClient.auth.signInWithPassword ({
-  email : LoginEmail,
-  password : LoginPassword
- });
- if (error) {
-  LoginMessage.textContent="Đăng nhập thất bại: " + error.message;
-  return;
- }
- LoginMessage.textContent="Đăng nhập thành công!";
- window.location.href="index.html";
- 
-}); 
-
-                           
 async function getUser() {
  const { data, error } = await supabaseClient.auth.getUser();
  if (error) {
