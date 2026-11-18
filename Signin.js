@@ -8,44 +8,6 @@ const supabaseAnonKey = "sb_publishable_jLDAR7Kpb6W65lgmvpVSMA_9shoqFxk"
  const supabaseClient = window.supabase.createClient(supabaseUrl, supabaseAnonKey); 
 // Đăng ký tài khoản cho người dùng
 
-// Chuyen du lieu len database (auth)
-const submitButton = document.getElementById("submitIn4")
-submitButton.addEventListener("click", async (e)=>{
- e.preventDefault();
- SignupMessage.textContent="";
-    const Subname = document.getElementById("username").value.trim()
-    const Subemail = document.getElementById("email").value.trim()
-    const Subpassword = document.getElementById("password").value
-    const Subrepassword = document.getElementById("repassword").value
- 
- if (Subname ==="" || Subemail ==="" || Subpassword ==="" || Subrepassword ==="") {
-  SignupMessage.textContent="Vui lòng nhập đầy đủ thông tin";
-  return;
- }
- if (Subrepassword !== Subpassword) {
-  SignupMessage.textContent="Mật khẩu nhập lại không khớp!";
-  return;
- }
-    const {data, error}= await supabaseClient.auth.signUp({
-        email: Subemail, 
-        password: Subpassword,
-        options: {
-            data: {
-                name: Subname
-            }
-        }
-    });
-
- if (error) {
-  SignupMessage.textContent="Đăng ký thất bại: "+ error.message;
-  return;
- }
- else{
-  SignupMessage.textContent= "Đăng ký thành công!"
-  window.location.href="index.html";
-}
-
-}); 
 // Phần đăng nhập
 const Loginbutt = document.getElementById("Loginbutt")
 Loginbutt.addEventListener("click", async (e)=>{
