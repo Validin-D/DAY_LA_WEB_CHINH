@@ -21,6 +21,15 @@
   box-sizing: border-box;
   min-width: 400px;
 }
+.LoginPage {
+  flex: 1;
+  border: 1px solid black;
+  border-radius: 10px;
+  text-align: center;
+  padding: 15px;
+  box-sizing: border-box;
+  min-width: 400px;
+}
 .khung {
   display: flex;
   gap: 10px;
