@@ -117,15 +117,18 @@
         const RegistID = crypto.randomUUID();
         //----Coin Card---
         const extCard = cardImg.name.split('.').pop();
-        const filePathCard = `${RegistID}_Card.${extCard}`; 
+        const filePathCard =
+    `${UserID}/student_Card/${RegistID}_Card.${extCard}`;
+
         //----Pro😎---
         const extProduct = ProductImg.name.split('.').pop();
-        const filePathProduct = `${RegistID}_Product.${extProduct}`; 
+        const filePathProduct =
+    `${UserID}/product_Image/${RegistID}_Product.${extProduct}`;
         
         
         //------------------ Phần lưu vào storage (Hình ảnh người dùng cung cấp)(sửa tí, cái này là riêng student card thôi----------------------
         const {data:dataImgSTC,error: errorSTC} = await supabaseClient.storage
-        .from ("student_Card")
+        .from ("UserFiles")
         .upload (filePathCard,cardImg,{
             cacheControl: '3600', 
             upsert: false, 
@@ -137,7 +140,7 @@
         }
         //----------Product Image nha------
         const {data:dataImgPro,error: errorImgPro} = await supabaseClient.storage
-        .from ("product_Image")
+        .from ("UserFiles")
         .upload (filePathProduct,ProductImg,{
             cacheControl: '3600', 
             upsert: false, 
