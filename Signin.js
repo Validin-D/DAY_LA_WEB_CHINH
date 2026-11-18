@@ -1,6 +1,4 @@
-const SignupMessage = document.getElementById("SignupMessage")
 const LoginMessage = document.getElementById("LoginMessage")
-const LogoutMessage = document.getElementById("LogoutMessage")
 
 const supabaseUrl = "https://rsndakviombsnwebuegy.supabase.co"
 const supabaseAnonKey = "sb_publishable_jLDAR7Kpb6W65lgmvpVSMA_9shoqFxk"
