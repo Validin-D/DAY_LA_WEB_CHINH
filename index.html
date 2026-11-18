@@ -70,11 +70,10 @@ const supabaseClient = window.supabase.createClient(
        <div class = "textUnder">
       <h3 id="signUpProduct"> Đăng ký sản phẩm</h3>
       </div>
-      <a href="AccountIn4.html">
-        <div class = "textUnderIn4">
-      <h3 id="signUpProduct"> Thông tin tài khoản</h3>
+      
+      <div class = "textUnderIn4">
+      <h3 id="AccountIn4"> Thông tin tài khoản</h3>
       </div>
-      </a>
 
       <div class = "textUnder1">
       <h3 id="textLogOut">ĐĂNG XUẤT</h3>
@@ -110,6 +109,10 @@ const supabaseClient = window.supabase.createClient(
       return
     }
     window.location.href = "LuuYVaChinhSach/LuuYKhiDangKy.html";
+  });
+  const AccountIn4 = document.getElementById("AccountIn4");
+  AccountIn4.addEventListener("click",async () => {
+    window.location.href = "AccountIn4.html";
   });
 </script>
 </body>
