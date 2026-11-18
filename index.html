@@ -64,14 +64,14 @@ const supabaseClient = window.supabase.createClient(
       </div>
       <hr id = "hrMainpage">
       <div class = "menuBox2">
-        <h3 id="TextmenuUserName"><img id ="imageAC1" src="accounticon.png" alt="Log in" height="20%" width="20%"> Chưa có tên</h3>
+        <h3 id="TextmenuUserName"><img id ="imageAC1" src="accounticon.png" alt="Log in" height="20%" width="20%"><span id="MenuUserName">ka</span></h3>
       </div>
-      <a href = "ProductIn4.html">
-      <div class = "textUnder">
+      <a href="ProductIn4.html">
+       <div class = "textUnder">
       <h3 id="signUpProduct"> Đăng ký sản phẩm</h3>
       </div>
       </a>
-      <div class = "textUnderIn4">
+       <div class = "textUnderIn4">
       <h3 id="signUpProduct"> Thông tin người dùng</h3>
       </div>
       <div class = "textUnder1">
@@ -80,22 +80,40 @@ const supabaseClient = window.supabase.createClient(
     </div>
   <p id="AccountIn4Page">Thông tin tài khoản</p>
 <script>
-  //---đổi tên TextmenuUserName-----
-  async function Name() {
-    const { data: { user }, error } = await supabaseClient.auth.getUser()
-    if (user) {
-      TextmenuUserName.textContent = user.user_metadata.name
+  
+  //---Đổi MenuUserName---
+  async function UpdateMenuUserName() {
+    const MenuName = document.getElementById("MenuUserName")
+    const { data: { user }, error } =
+      await supabaseClient.auth.getUser()
+    if (error || !user) {
+      MenuName.textContent = "Chưa có tên"
+      return
     }
+    MenuName.textContent = user.user_metadata.name || "Chưa có tên"
   }
+  //---Theo dõi trạng thái đăng nhập---
+  supabaseClient.auth.onAuthStateChange(() => {
+    setTimeout(() => {
+      UpdateMenuUserName()
+    }, 0)
+  })
+  //---Cập nhật lần đầu khi mở trang---
+  UpdateMenuUserName()
+//----link---//
   const SignUpPageText = document.getElementById("signUpProduct");
-  SignUpPageText.addEventListener("click", () => {
+  SignUpPageText.addEventListener("click",async () => {
+    const { data: { session }, error} = await supabaseClient.auth.getSession()
+    if (error || !session) {
+      alert("Vui lòng đăng nhập để thực hiện đăng ký sản phẩm")
+      return
+    }
     window.location.href = "ProductIn4.html";
   });
   const AccountIn4Page = document.getElementById("AccountIn4Page");
   AccountIn4Page.addEventListener("click", () => {
     window.location.href = "AccountIn4.html";
   });
-  Name()
 </script>
 </body>
   
