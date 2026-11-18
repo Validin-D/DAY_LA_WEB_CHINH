@@ -12,21 +12,17 @@ const EmailMessage = document.getElementById("EmailMessage")
 function updateUI(session) {
  if (session) {
   const user = session.user;
-  AuthStatus.textContent = "Trạng thái: đang đăng nhập";
-  NameMessage.textContent = user.user_metadata?.name || "Chưa có tên";
-  EmailMessage.textContent = user.email || "Chưa có email";
+  
  }
  else {
-  AuthStatus.textContent = "Trạng thái: chưa đăng nhập";
-  NameMessage.textContent = "Chưa có thông tin";
-  EmailMessage.textContent = "Chưa có thông tin";
+  
  }
 }
 //-----check----
 async function getSession() {
  const { data, error } = await supabaseClient.auth.getSession();
  if (error) {
-  AuthStatus.textContent ="Không thể kiểm tra trạng thái đăng nhập"
+  alert("Không thể kiểm tra trạng thái đăng nhập")
   return;
  }
  updateUI(data.session);
