@@ -1,9 +1,6 @@
 const SignupMessage = document.getElementById("SignupMessage")
 const LoginMessage = document.getElementById("LoginMessage")
 const LogoutMessage = document.getElementById("LogoutMessage")
-const NameMessage = document.getElementById("NameMessage")
-const EmailMessage = document.getElementById("EmailMessage")
-const AuthStatus = document.getElementById("AuthStatus")
 
 const supabaseUrl = "https://rsndakviombsnwebuegy.supabase.co"
 const supabaseAnonKey = "sb_publishable_jLDAR7Kpb6W65lgmvpVSMA_9shoqFxk"
@@ -94,21 +91,15 @@ async function getUser() {
 function updateUI(session) {
  if (session) {
   const user = session.user;
-  AuthStatus.textContent = "Trạng thái: đang đăng nhập";
-  NameMessage.textContent = user.user_metadata?.name || "Chưa có tên";
-  EmailMessage.textContent = user.email || "Chưa có email";
  }
  else {
-  AuthStatus.textContent = "Trạng thái: chưa đăng nhập";
-  NameMessage.textContent = "Chưa có thông tin";
-  EmailMessage.textContent = "Chưa có thông tin";
  }
 }
 //-----check----
 async function getSession() {
  const { data, error } = await supabaseClient.auth.getSession();
  if (error) {
-  AuthStatus.textContent ="Không thể kiểm tra trạng thái đăng nhập"
+  alert("Không thể kiểm tra trạng thái đăng nhập")
   return;
  }
  updateUI(data.session);
