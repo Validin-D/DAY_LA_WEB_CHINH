@@ -156,6 +156,15 @@ body{
     background-color: rgb(255, 222, 89);
 
 }
+.textUnderIn4{
+    height: 60px ;
+    width: 100%;
+    display: flex;
+    position: relative;
+    align-items: center;
+    top: 15vh;    background-color: rgb(255, 222, 89);
+    color: black; 
+}
 #textLogOut{
     font-family: 'noto Sans';
     margin: 0 auto; 
