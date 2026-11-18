@@ -155,6 +155,8 @@
         // --------Phần Insert biến trên vào supabase table-----------------
          const { data, error } = await supabaseClient
         .from("ProductSignUp") // Đây là tên table, nó sẽ xác định là nhập vào bảng table nào trong supabase
+        console.log("UserID:", UserID);
+        console.log("RegistID:", RegistID);
         .insert([ //class insert này sẽ để nó chuyển thông tin vào table của mình
             {
             // -----------Phần data của người dùng---------------
