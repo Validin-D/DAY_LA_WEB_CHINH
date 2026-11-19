@@ -53,16 +53,16 @@ Loginbutt.addEventListener("click", async (e)=>{
   LoginMessage.textContent="";
 
  const { data: currentData } = await supabaseClient.auth.getSession();
- if (currentData.session) {
-  LoginMessage.textContent = "Tài khoản được đăng nhập thành công";
-  return;
- }
  
  const LoginEmail = document.getElementById("LoginEmail").value.trim();
  const LoginPassword = document.getElementById("LoginPassword").value;
 
  if (LoginEmail === "" || LoginPassword === "") {
   LoginMessage.textContent="Vui lòng nhập đầy đủ thông tin";
+  return;
+ }
+ if (currentData.session) {
+  LoginMessage.textContent = "Tài khoản đã được đăng nhập";
   return;
  }
  
