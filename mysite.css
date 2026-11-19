@@ -154,6 +154,14 @@ body{
     left: 50%;
     transform: translateX(-50%);
 }
+#AccountIn4{
+    font-family: 'noto Sans';
+    font-size: 20px;
+    white-space: nowrap;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
 .textUnder1{
     height: 40px ;
     width: 100%;
@@ -163,15 +171,6 @@ body{
     bottom: 0;  
     background-color: rgb(255, 222, 89);
 
-}
-.textUnderIn4{
-    height: 60px ;
-    width: 100%;
-    display: flex;
-    position: relative;
-    align-items: center;
-    top: 15vh;    background-color: rgb(255, 222, 89);
-    color: black; 
 }
 #textLogOut{
     font-family: 'noto Sans';
@@ -192,9 +191,13 @@ body{
     display: flex;
     position: relative;
     align-items: center;
-    top: 15vh;    background-color: rgb(255, 222, 89);
+    top: 15vh;  
+      background-color: rgb(255, 222, 89);
     color: black; 
 }
+
+
+
 @media (max-width: 768px){
     #signUpProduct{
         font-size: 15px;
