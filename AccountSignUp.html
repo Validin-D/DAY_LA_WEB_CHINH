@@ -31,33 +31,23 @@
         <label>Re-password:</label>
         <input required type="password" name="re-password" id ="repassword" placeholder="Nhập lại mật khẩu">
     </div> <br>
-    <p id="SignupMessage" style="color: red;" >vui lòng nhập đầy đủ thông tin</p>
+    <p id="SignupMessage" style="color: red;" ></p>
     <div id = "submitIn4"> <button type="button">Đăng ký</button></div>
     </div> 
   
-    <br><br>
+    <br>
         
-    <div class="LoginPage">
-        <h1> Đăng nhập tại đây</h1>
-        <br>
-        <label>Email:</label>
-        <input required type="email" placeholder="Nhập email" id="LoginEmail">
-        <br>
-        <label>Password:</label>
-        <input required type="password" placeholder="Nhập mật khẩu" id="LoginPassword">
-        <br>
-        <p id="LoginMessage" style="color: red;" >vui lòng nhập đầy đủ thông tin</p>
-        <button type="button" id ="Loginbutt">Đăng nhập</button>
-    </div> <br>
     </div>
     <p id="message"></p>
-    <br>
-    <br>
-    <p id="NameMessage"></p>
-    <p id="EmailMessage"></p>
-    <p id="AuthStatus">Đang kiểm tra trạng thái...</p>
 </div>
+    <p id="Signinpage">Vào trang đăng nhập</p>
     <script type = "module" src="AccountSignUp.js"></script>
+    <script>
+        const Signinpage = document.getElementById("Signinpage")
+        Signinpage.addEventListener("click",async () => {
+            window.location.href = "Signin.html";
+        });
+    </script>
 </body>
 
 
