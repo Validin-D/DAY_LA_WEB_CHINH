@@ -133,4 +133,6 @@ background-attachment: fixed;
    font-size: 12px;
    flex-wrap: nowrap;
 }
+#back:hover {
+    transform: scale(0.8);
 }
