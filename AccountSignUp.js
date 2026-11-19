@@ -14,6 +14,7 @@ const supabaseClient = window.supabase.createClient(
     supabaseAnonKey
 );
 
+
 // Đăng ký tài khoản
 
 const submitButton = document.getElementById("submitIn4");
@@ -59,6 +60,7 @@ submitButton.addEventListener("click", async (e) => {
     }
 
     SignupMessage.textContent = "Đăng ký thành công!";
+
     window.location.href = "index.html";
 });
 
@@ -104,6 +106,7 @@ Loginbutt.addEventListener("click", async (e) => {
     }
 
     LoginMessage.textContent = "Đăng nhập thành công!";
+
     window.location.href = "index.html";
 });
 
