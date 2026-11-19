@@ -192,14 +192,15 @@ body{
     position: relative;
     align-items: center;
     top: 15vh;  
-      background-color: rgb(255, 222, 89);
+    background-color: rgb(255, 222, 89);
     color: black; 
 }
 
 
 
 @media (max-width: 768px){
-    #signUpProduct{
+    #signUpProduct,
+    #AccountIn4{
         font-size: 15px;
     }
 }
