@@ -1,1 +1,6 @@
-
+#TrangChuIcon {
+  position: relative;
+}
+#TrangChuIcon:hover {
+  transform: scale(0.8);
+}
